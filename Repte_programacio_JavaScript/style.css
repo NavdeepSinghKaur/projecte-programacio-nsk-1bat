@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    background: linear-gradient(-45deg, #eed752,  #23a6d5, #e22b2b, #24dd43);
+    animation: gradient 15s ease infinite;
+    background-size: 5000rem;
+    font-family:"SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+ul{
+	list-style-type: none;
+  	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+  
+li{
+	float: left;
+}
+  
+li a{
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li:hover a:hover{
+	transition: 1s;
+	background-color: black;
+}
+
+#text{
+	font-family: 'Poppins', sans-serif;
+	font-size: 40px;
+	text-align: center;
+}
+
+.botoCalcular{
+    text-align: center;
+	border: 1px;
+	font-weight: 100; 
+	padding: 10px;
+	margin-top: 20px;
+	margin: 0 auto;
+}
+
+#boto{
+	background: rgb(0, 0, 0);
+	padding: 1rem;
+	font-size: 25px;
+	border-radius: 5px;
+	border-width: 0;
+	font-weight: 400;
+	font-family: 'Poppins', sans-serif;
+	color: white;
+}
+
+#boto:hover{
+	transition: 0.5s;
+	background: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+}
+
+strong{
+	margin-left: 47%;
+    font-size: 45px;
+}

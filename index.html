@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repte Programació</title>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <h1> Repte programació </h1>
+    <center><p class="elements">Scratch. Python. JavaScript.</p></center>
+
+    <center><p class="langTitle">Scratch</p></center>
+
+    <center><iframe src="https://scratch.mit.edu/projects/776838850/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe></center>
+
+    <center><p class="langTitle">Python</p></center>
+
+<div class="code">
+<pre>
+<code>
+
+<p style="color: green;">#Aquest codi no funcionarà sense la llibreria colorama.</p>
+
+pip install colorama
+
+<p style="color: green;">#Codi.</p>
+
+from colorama import Back
+
+array_nota_final = []
+            
+def entrada(nom, multiplicador):
+            
+    item = float(input(f'nota de {nom}: '))    
+            
+    while (item > 10 or item < 0): 
+        item = float(input(f'la nota de {nom} no està entre 0 i 10 torna a escriure-la: '))
+            
+    array_nota_final.append(item*multiplicador)
+                
+entrada("examen", 0.4)
+entrada("exercici", 0.1)
+entrada("pràctica", 0.2)
+entrada("projecte", 0.2)
+entrada("actitud", 0.1)
+            
+suma_final = round(sum(array_nota_final), 2)
+            
+if suma_final >= 9: print(Back.BLUE + "\n"*10 + f'{suma_final}')
+            
+elif suma_final < 9 and suma_final >= 7: print(Back.GREEN + "\n"*10 + f'{suma_final}')
+            
+elif suma_final < 7 and suma_final >= 5: print(Back.YELLOW + "\n"*10 + f'{suma_final}')
+            
+else: print(Back.RED + "\n"*10 + f'{suma_final}')
+
+</code>
+</pre>
+</div>
+
+<center><a class="links" href="/repte_programacio_python.py" download>Descarregar</a></center>
+
+<center><p class="langTitle">JavaScript</p></center>
+
+<div class="code">
+<pre>
+<code>
+    <p style="color: green;">#Codi de JavaScript.</p>
+    var arrayDeNotes = [];
+
+    let calculadorNotes = (nom, multiplicador) => {
+        
+        let notes = parseFloat(prompt(`indica les notes de ${nom}`));
+
+        while (notes > 10 || notes < 0) { 
+            item = parseFloat(prompt(`Les notes de ${nom} no estan entre 0 i 10, torna a indicar-les`)) 
+        };
+
+        arrayDeNotes.push(notes*multiplicador);
+
+        if (arrayDeNotes.length == 5){
+            var sum = arrayDeNotes.reduce((i, value) => { return i + value; }, 0);
+
+            var valor = document.querySelector("strong");
+                valor.innerHTML = sum.toFixed(2);
+            
+            if (sum >= 9){ document.body.style.background = "#23a6d5"}
+            else if (sum >= 7 && sum <= 9){ document.body.style.background = "#24dd43"}
+            else if (sum >= 5 && sum <= 7){ document.body.style.background = "#eed752"}
+            else {document.body.style.background = "#e22b2b"}
+
+            console.log(arrayDeNotes)
+            arrayDeNotes.length = 0
+        };
+        
+    };
+
+    const clickboto = () => {
+        calculadorNotes("examen", 0.4);
+        calculadorNotes("exercicis", 0.1);
+        calculadorNotes("pràctiques", 0.2);
+        calculadorNotes("projectes", 0.2);
+        calculadorNotes("actitud", 0.1);
+    };
+
+</code>
+</pre>
+</div>
+<center><a class="links" href="Repte_programacio_JavaScript/repteJavaScript.html">Experimentar</a></center>
+</body>
+</html>
